@@ -7,10 +7,10 @@ char phno[12],dob[10],aim[10],favfood[10];
 char name[20],email[20],hob[20],favper[20],favmov[20],favcol[10];
 char fname[20],nick[20],des[10],like[10],lng[10],adv[20],dislike[10];
 struct Slam *next;
-}* head;
+};
 
 typedef struct Slam slam;
-FILE *fp,*ft;
+slam *head = NULL;
 
 void welcomeUser(){
    system("color 4F");
@@ -19,7 +19,8 @@ void welcomeUser(){
    printf("\t#################################### WELCOME TO C PROGRAM ONLINE SLAM BOOK ##############################################\n\n");
    printf("\t---------------------------------------------------------------------------------------------------------------------");
    printf("\n\n\n\t\t*******************************'FRIENDS ARE MADE, NOT BORN'******************************\n\n\n\n\n\n\n\n\n\t");
-   system("pause");
+   printf("\n");
+   getchar();
 }
 //Insert Function
 void insert(char* phno, char* dob, char* name, char* email, char* hob, char* favper, char* favmov, char* favcol, char* fname, char* des, char* nick, char* like, char* dislike, char* aim, char* favfood, char* adv, char* lng)
@@ -218,7 +219,7 @@ int main()
 head = NULL;
 char c;
 int choice,ch;
-char phno[12],dob[10],aim[10],favfood[10];
+char phno[12],dob[10],aim[50],favfood[10];
 char name[20],email[20],hob[20],favper[20],favmov[20],favcol[10];
 char fname[20],nick[20],des[10],like[10],lng[10],adv[20],dislike[10];
 welcomeUser();
@@ -292,8 +293,9 @@ while(1)
     printf("\nYour advice to %s : ",fname);
     scanf("%s",adv);
     insert(phno, dob, name, email, hob, favper, favmov, favcol, fname, des, nick, like, dislike, aim, lng, adv, favfood);
-        printf("\n");
-    system("pause");
+    printf("\n");
+    getchar();
+
     break;
     case 2:
     system("cls");
@@ -304,8 +306,9 @@ while(1)
         fflush(stdin);
     scanf("%s", name);
     search(name);
-        printf("\n");
-       system("pause");
+    printf("\n");
+    getchar();
+      
     break;
     case 3:
     system("cls");
@@ -316,8 +319,8 @@ while(1)
             fflush(stdin);
     scanf("%s", name);
     Delete(name);
-        printf("\n");
-       system("pause");
+    printf("\n");
+    getchar();
     break;
     case 4:
     system("cls");
@@ -328,8 +331,8 @@ while(1)
             fflush(stdin);
     scanf("%s", name);
     update(name);
-        printf("\n");
-       system("pause");
+    printf("\n");
+    getchar();
     break;
     case 5:
       system("cls");
@@ -338,14 +341,14 @@ while(1)
       printf("\n----------------");
     display();
     printf("\n");
-       system("pause");
+    getchar();
     break;
     case 0:
     exit(0);
     default:
     printf("\nInvalid Choice");
-        printf("\n");
-       system("pause");
+    printf("\n");
+    getchar();
     break;
   }
 }
